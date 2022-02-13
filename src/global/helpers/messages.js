@@ -1,4 +1,4 @@
-const { UNAUTHORIZED, CONFLICT, NOT_FOUND, BAD_REQUEST } = require('http-status-codes').StatusCodes;
+const { UNAUTHORIZED, CONFLICT, NOT_FOUND, BAD_REQUEST, UNPROCESSABLE_ENTITY } = require('http-status-codes').StatusCodes;
 
 module.exports.JWT_MALFORMED_401 = { message: 'Jwt malformed', status: UNAUTHORIZED };
 module.exports.MISSING_TOKEN_401 = { message: 'Missing auth token', status: UNAUTHORIZED };
@@ -9,3 +9,4 @@ module.exports.INVALID_ENTRIES_400 = { message: 'Invalid entries', status: BAD_R
 module.exports.INVALID_ID_400 = { message: 'Invalid task ID', status: BAD_REQUEST };
 module.exports.TASK_NOT_EXIST_404 = { message: 'Task not exist', status: NOT_FOUND };
 module.exports.NO_TASKS_ADDED_404 = { message: 'No tasks added yet', status: NOT_FOUND };
+module.exports.ERROR_CREATE_TASK_417 = { message: 'Error creating task. Please try again', status: UNPROCESSABLE_ENTITY }

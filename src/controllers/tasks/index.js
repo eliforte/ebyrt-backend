@@ -5,8 +5,8 @@ module.exports.Create = async (req, res, next) => {
   try {
     const { _id: userId } = req.user;
     const { text, status, createAt } = req.body;
-    await CreateTask({ text, status, userId, createAt });
-    return res.status(ACCEPTED).json({ message: 'Successfully created task!' });
+    const newTask = await CreateTask({ text, status, userId, createAt });
+    return res.status(ACCEPTED).json({ data: newTask });
   } catch (err) {
     next(err);
   }

@@ -13,8 +13,8 @@ module.exports.SCHEMARegister = Joi.object({
 
 module.exports.SCHEMATask = Joi.object({
   text: Joi.string().required(),
-  userId: Joi.string().required(),
   status: Joi.string().required(),
+  createAt: Joi.string().required(),
 });
 
 module.exports.SCHEMAUpdateTask = Joi.object({
