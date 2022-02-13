@@ -10,3 +10,5 @@ const validadeId = (id) => {
 module.exports.CreateTask = async ({ text, userId, status, createAt }) => {
   return await Create({ text, status, createAt, userId });
 };
+
+module.exports.ListTask = async () => await ListTask();
