@@ -17,3 +17,4 @@ module.exports.UpdateTask = async (id, infoTask) => {
 
   return value;
 }
+module.exports.FindById = async (id) => userCollection.findOne(ObjectId(id));
