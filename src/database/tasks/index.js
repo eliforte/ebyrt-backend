@@ -13,6 +13,7 @@ module.exports.UpdateTask = async (id, infoTask) => {
   const { value } = await userCollection.findOneAndUpdate(
     { _id: ObjectId(id) },
     { $set: infoTask },
+    { returnDocument: 'after', returnOriginal: false },
   );
 
   return value;

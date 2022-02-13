@@ -10,7 +10,7 @@ const validatedId = (id) => {
 module.exports.CreateTask = async ({ text, userId, status, createAt }) => {
   const newTask = await Create({ text, status, createAt, userId });
   if (!newTask.insertedId) return NewError(ERROR_CREATE_TASK_417);
-  return await ListTask(userId);
+  return 'Created'
 };
 module.exports.ListTasks = async (_id) => {
   const allTask = await ListTask(_id);
