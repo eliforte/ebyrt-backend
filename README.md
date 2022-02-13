@@ -55,7 +55,7 @@ mocks necessários.
 
 ## Requisições e End-Points
 
-Todas as requisições devem ser feitas para a URL.
+Todas as requisições devem ser feitas para está [url](https://ebyrt-api.herokuapp.com/).
 
 ## Script
 
