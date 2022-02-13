@@ -1,4 +1,4 @@
-const { ACCEPTED } = require('http-status-codes').StatusCodes;
+const { ACCEPTED, OK } = require('http-status-codes').StatusCodes;
 const service = require('../../services/tasks');
 
 module.exports.Create = async (req, res, next) => {
@@ -9,5 +9,14 @@ module.exports.Create = async (req, res, next) => {
     return res.status(ACCEPTED).json({ message: 'Successfully created task!' });
   } catch (err) {
     next(err);
+  }
+};
+
+module.exports.List = async (req, res, next) => {
+  try {
+    const list = await service.listTasks();
+    return res.status(OK).json(list);
+  } catch (err) {
+    next(err)
   }
 };
