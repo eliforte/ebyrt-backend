@@ -6,7 +6,7 @@ const auth = require('../../global/middlewares/auth');
 const router = express.Router({ mergeParams: true });
 
 router.get('/', List);
-router.post('/register', auth.verifyToken, Tasks, Create);
+router.post('/', auth.verifyToken, Tasks, Create);
 router.delete('/:id', auth.verifyToken, Delete);
 
 module.exports = router;
