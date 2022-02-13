@@ -1,11 +1,11 @@
 const { ACCEPTED, OK, NO_CONTENT } = require('http-status-codes').StatusCodes;
-const service = require('../../services/tasks');
+const { CreateTask } = require('../../services/tasks');
 
 module.exports.Create = async (req, res, next) => {
   try {
-    const { _id } = req.user;
-    const { tasks, status } = req.body;
-    await service.createTasks({ tasks, status, _id });
+    const { _id: userId } = req.user;
+    const { text, status, createAt } = req.body;
+    await CreateTask({ text, status, userId, createAt });
     return res.status(ACCEPTED).json({ message: 'Successfully created task!' });
   } catch (err) {
     next(err);
