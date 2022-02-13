@@ -28,8 +28,8 @@ module.exports.Register = async (req, _res, next) => {
 
 module.exports.Tasks = async (req, _res, next) => {
   try {
-    const { text, userId, status } = req.body;
-    const { error } = SCHEMATask.validate({ text, userId, status });
+    const { text, status, createAt } = req.body;
+    const { error } = SCHEMATask.validate({ text, status, createAt });
     if (error) return next({ message: error.message, status: BAD_REQUEST });
     next();
   } catch (err) {
