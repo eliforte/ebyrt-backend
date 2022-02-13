@@ -4,12 +4,34 @@ API desenvolvida para fazer o controle de um To-Do List.
 
 ![GitHub followers](https://img.shields.io/github/followers/eliforte?style=social)
 
+***
+
+## Sumário
+- [Sobre](#sobre)
+- [Contatos](#contatos)
+- [Ferramentas utilizadas](#ferramentas-utilizadas)
+- [Testes](#testes)
+- [Requisições e End-Points](#requisições-e-end-points)
+- [Script](#script)
+- [Autenticação de usuário](#autentica-de-usuário)
+  - [Registro](#registro)
+  - [Login](#login)
+- [Tarefas](#tarefas)
+  - [Listagem de Tarefas](#listagem-de-tarefas)
+  - [Criando Tarefas](#criando-tarefas)
+  - [Atualizando dados de uma tarefa](#atualizando-dados-de-uma-tarefa)
+  - [Removendo Tarefa](#removendo-tarefa)
+- [Contribuições](#contribuições)
+
+***
 ## Sobre
   Aplicação desenvolvida por [Elias Forte](https://github.com/eliforte).
   
-### Contatos
+## Contatos
 <a targer="_blank" href="https://www.instagram.com/eliifort/"><img src="https://img.icons8.com/fluency/48/000000/instagram-new.png"/></a>
 <a targer="_blank" href="https://www.linkedin.com/in/elias-forte/"><img src="https://img.icons8.com/fluency/48/000000/linkedin.png"/></a>
+
+***
 
 ## Ferramentas utilizadas
 
@@ -20,7 +42,7 @@ login dos usuários feita com o [JsonWebToken](https://www.npmjs.com/package/jso
 
 Deploy da aplicação feita na plataforma gratuita de hospedagem [Heroku](https://id.heroku.com/).
 
-### Testes
+## Testes
 
 Foram feitos teste de integração, usando as ferramentas [Chai](https://www.npmjs.com/package/chai) para fazer as asserções junto
 com plug-in [Chai-Http](https://www.npmjs.com/package/chai-http) e o [Mongo-Memory-Server](https://www.npmjs.com/package/mongodb-memory-server), que respectivamente,
@@ -33,12 +55,14 @@ mocks necessários.
 
 Todas as requisições devem ser feitas para a URL.
 
-## Scripts
+## Script
 
 - <code>npm install</code> => instalará todas a dependências do projeto use o comando.
 - <code>npm start</code> => inicializará a aplicação para ambiente de produção.
 - <code>npm run dev</code> => inicializará a aplicação para ambiente de desenvolvimento.
 - <code>npm run test</code> => incializará os testes unitários da aplicação.
+
+***
 
 ### Autenticação de usuário
 
@@ -89,11 +113,11 @@ Exemplos de erros que podem retornar:
 ```json
 {
   "user": {
-		"_id": "6208c2d683d9b0e29874c7cb",
-		"email": "email@exemplo.com",
-		"name": "Nome do Usuário"
-	},
-	"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImFja25vd2xlZGdlZCI6dHJ1ZSwiaW5zZXJ0ZWRJZCI6IjYyMDhjMmQ2ODNkOWIwZTI5ODc0YzdjYiJ9LCJpYXQiOjE2NDQ3NDEzMzQsImV4cCI6MTY0NTM0NjEzNH0.ouKmFlNq82-2sa506cbXrfLr3koTvtd5RJRQE6fz1XY"
+    "_id": "6208c2d683d9b0e29874c7cb",
+    "email": "email@exemplo.com",
+    "name": "Nome do Usuário"
+  },
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImFja25vd2xlZGdlZCI6dHJ1ZSwiaW5zZXJ0ZWRJZCI6IjYyMDhjMmQ2ODNkOWIwZTI5ODc0YzdjYiJ9LCJpYXQiOjE2NDQ3NDEzMzQsImV4cCI6MTY0NTM0NjEzNH0.ouKmFlNq82-2sa506cbXrfLr3koTvtd5RJRQE6fz1XY"
 }
 ```
 
@@ -122,85 +146,53 @@ no registro e ambos os campos são obrigatórios. Após feito o login, o usuári
 ```json
 {
   "user": {
-		"_id": "6208c2d683d9b0e29874c7cb",
-		"email": "email@exemplo.com",
-		"name": "Nome do Usuário"
-	},
-	"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjYyMDhjMmQ2ODNkOWIwZTI5ODc0YzdjYiIsImVtYWlsIjoiZW1haWxAZXhlbXBsby5jb20iLCJuYW1lIjoiTm9tZSBkbyBVc3XDoXJpbyJ9LCJpYXQiOjE2NDQ3NDE2MDQsImV4cCI6MTY0NTM0NjQwNH0.NsnrEGQ5DF9KOjqZIgWXdzrc9DYQ0XZRUbmrRTgoTMc"
-}
-```
-
-### Games
-
-#### LISTAGEM DE TAREFAS
-
-Para fazer a listagem de todas as tarefas faça uma requisição do tipo <strong>GET</strong> para o endpoint <code>/games</code> e o retorno dever ser um array
-com todos os jogos disponíveis do banco, como por exemplo:
-
-```json
-[
-  {
-    "_id": "61b7debf28efdadb9320a401",
-    "name": "Call of Duty",
-    "price": 3,
-    "quantity": 5,
-    "userId": "61b679f28c796346fe862884",
-    "image": "https://game-store-14.herokuapp.com/61b7debf28efdadb9320a401.jpeg"
+    "_id": "6208c2d683d9b0e29874c7cb",
+    "email": "email@exemplo.com",
+    "name": "Nome do Usuário"
   },
-  {
-    "_id": "61b7df0d28efdadb9320a402",
-    "name": "God Of War",
-    "price": 3,
-    "quantity": 2,
-    "userId": "61b679f28c796346fe862884",
-    "image": "https://game-store-14.herokuapp.com/61b7df0d28efdadb9320a402.jpeg"
-   },
-]
-
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjYyMDhjMmQ2ODNkOWIwZTI5ODc0YzdjYiIsImVtYWlsIjoiZW1haWxAZXhlbXBsby5jb20iLCJuYW1lIjoiTm9tZSBkbyBVc3XDoXJpbyJ9LCJpYXQiOjE2NDQ3NDE2MDQsImV4cCI6MTY0NTM0NjQwNH0.NsnrEGQ5DF9KOjqZIgWXdzrc9DYQ0XZRUbmrRTgoTMc"
+}
 ```
 
-#### BUSCAR GAME PELO ID
+### Tarefas
 
-Para fazer a busca de um único game, deve ser feito uma requisição do tipo <strong>GET</strong> para o endpoint <code>/games/:id</code>, informando o id do game.
-Tendo o retorno da seguinte forma:
+#### Listagem de tarefas
+
+Para fazer a listagem de todas as tarefas faça uma requisição do tipo <strong>GET</strong> para o endpoint <code>/games</code> e o retorno dever ser uma lista
+com todas tarefas disponíveis do usuário. Exemplo:
 
 ```json
 {
-  "_id": "61b80f079eeb9b77d9d03bfe",
-  "name": "Crash, Tag Team Racing",
-  "price": 3,
-  "quantity": 4,
-  "userId": "61b679f28c796346fe862884",
-  "image": "https://upload-game-store.s3.amazonaws.com/61b80f079eeb9b77d9d03bfe.jpeg"
+  "data": [
+    {
+      "_id": "6208cb223b4551a435f595b4",
+      "text": "Estudar Next.js",
+      "userId": "6208c2d683d9b0e29874c7cb",
+      "status": "Ready to start",
+      "createAt": "13/02/2022"
+    },
+    {
+      "_id": "6208cb4d2ed83443600e4b84",
+      "text": "Ler sobre Auth0",
+      "userId": "6208c2d683d9b0e29874c7cb",
+      "status": "Ready to start",
+      "createAt": "13/02/2022"
+    }
+  ]
 }
 
 ```
 
-<strong>Se o ID do game estiver no formato incorreto, exibe o retorno:</strong>
+#### Criando tarefas
 
-```json
-{
-  "message": "Invalid game ID"
-}
-```
-
-<strong> Se o game não existir, exibe o retorno:</strong>
-
-```json
-{
-  "message": "Game not exist"
-}
-```
-#### CRIANDO GAME
-
-Para criar um game, o usuário deve está logado com um token válido, fazendo uma requisição do tipo <strong>POST</strong> para o endpoint <code>/games/register</code>. 
-Os campos <code>name</code>, <code>price</code>, <code>quantity</code> são obrigatórios.
+Para criar uma tarefa, o usuário deve está logado com um token válido, fazendo uma requisição do tipo <strong>POST</strong> para o endpoint <code>/task</code>. 
+Os campos <code>text</code>, <code>creatAt</code>, <code>status</code> são obrigatórios.
 
 <strong>Campo vazio:</strong>
 
 ```json
 {
-  "message": "\"name\" is not allowed to be empty"
+  "message": "\"text\" is not allowed to be empty"
 }
 
 ```
@@ -222,107 +214,62 @@ Os campos <code>name</code>, <code>price</code>, <code>quantity</code> são obri
   "message": "Jwt malformed"
 }
 ```
-<strong>Game criado com sucesso:</strong>
+<strong>Tarefa criada com sucesso:</strong>
 
 ```json
 {
-  "message": "Successfully created game!"
+  "message": "Created"
 }
 ```
 
-#### ADICIONANDO IMAGENS AOS GAMES
+#### Atualizando dados de uma tarefa
 
-Após criar o game na rota <code>/games/register</code>, no database ele ficara desta forma:
+A atualização deve ser feita por uma requisição do tipo <strong>PUT</strong> para o endpoit <code>/task/:id</code>. O usuário deve está autenticado para fazer a atualização.
+Em forma de query, a api esperar receber um <code>ID</code>, que exista no banco e seja válido, da tarefa a ser modificada.
+Enviando o <code>/task/6208cb223b4551a435f595b4</code> na requisição, com os campos:
+```json
+{
+  "text": "Estudar Next.js",
+  "status": "Concluído"
+}
+```
+Caso o <strong>ID seja inválido:</strong>
+```json
+{
+  "message": "Invalid task ID"
+}
+```
+
+Caso a tarefa <strong>não exista</strong>:
 
 ```json
 {
-  "_id": "61b8e5dd1a0577e965f9818a",
-  "name": "Call Of Duty",
-  "price": 3,
-  "quantity": 7,
-  "userId": "61b825bd5edb54df07d20701"
+  "message": "Task not exist"
 }
 ```
 
-Todo novo jogo é criado sem imagem. Para adicionar a imagem faça uma requisição do tipo <strong>POST</strong> para o endpoint <code>/games/image/:id</code>.
-O usuário deve está autenticado para fazer o upload da imagem, o <code>ID</code> deve ser válido e o deve existir . É importante resaltar que o <code>ID</code> da rota <code>
-/games/image/:id</code>, se refere ao <code>ID</code> do novo game cadastrado no database. Faça uma nova requisição de listagem, para obter o <code>ID</code> do game e envie
-esse mesmo <code>ID</code> na requisição <strong>POST</strong> para que a imagem seja alocada com o game certo. Após seguir esses passos, retornara da API a mensagem:
-  
-```json
-{
-  "message": "Upload completed successfully!"
-}
-```
-  
-<strong>No database ficara desta forma:</strong>  
+Se todas informações forem no formato correto, o retorno será:
 
 ```json
 {
-  "_id": "61b8e5dd1a0577e965f9818a",
-  "name": "Call Of Duty",
-  "price": 3,
-  "quantity": 7,
-  "userId": "61b679f28c796346fe862884",
-  "image": "https://upload-game-store.s3.amazonaws.com/61b8e5dd1a0577e965f9818a.jpeg"
+  "_id": "6208cb223b4551a435f595b4",
+  "text": "terminar o readMe",
+  "userId": "6208c2d683d9b0e29874c7cb",
+  "status": "Concluído",
+  "createAt": "13/02/2022"
 }
 ```
+#### Removendo tarefas
 
-<strong>Se o ID do game estiver no formato incorreto, exibe o retorno:</strong>
-
-```json
-{
-  "message": "Invalid game ID"
-}
-```
-
-<strong> Se o game não existir, exibe o retorno:</strong>
-
-```json
-{
-  "message": "Game not exist"
-}
-```
-
-#### ATUALIZANDO DADOS DOS GAMES
-
-A atualização deve ser feita por uma requisição do tipo <strong>PUT</strong> para o endpoit <code>/games/:id</code>. O usuário deve está autenticado para fazer a atualização,
-o <code>ID</code> deve ser válido e o jogo existir. O <code>ID</code> do item a ser modificado, exemplo: 
-
-```json
-{
-  "_id": "61b8e5dd1a0577e965f9818a",
-  "name": "Call Of Duty",
-  "price": 3,
-  "quantity": 7,
-  "userId": "61b679f28c796346fe862884",
-  "image": "https://upload-game-store.s3.amazonaws.com/61b8e5dd1a0577e965f9818a.jpeg"
-}
-```
-
-Enviando o <code>"_id": "61b8e5dd1a0577e965f9818a"</code> na rota correta, o com o campo ```json { "name": "Need For Speed" } ```, o retorno será:
-
-```json
-{
-  "_id": "61b8e5dd1a0577e965f9818a"
-  "name": "Need For Speed",
-  "price": 3,
-  "quantity": 7,
-  "userId": "61b679f28c796346fe862884",
-  "image": "https://upload-game-store.s3.amazonaws.com/61b8e5dd1a0577e965f9818a.jpeg"
-}
-```
-#### REMOVENDO GAMES
-
-Aplicação permite somente remoção de um jogo por requisição. Para fazer a remoção, o usuário deve está autenticado, deve informar um <code>ID</code> válido de um jogo que existe
-no database. A requisição deve ser do tipo <strong>DELETE</strong> para o endpoint <code>/games/:id</code>. A resposta da API sera um status code <code>204 No Content</code>.
+Aplicação permite somente remoção de uma atividade por requisição. Para fazer a remoção, o usuário deve está autenticado, deve enviar, por query, um <code>ID</code> válido de uma tarefa que exista
+na lista. A requisição deve ser do tipo <strong>DELETE</strong> para o endpoint <code>/task/:id</code>. A resposta da API sera um status code <code>204 No Content</code>.
 Em casos de erros, podem sugir as seguintes retornos: 
 
 <strong>Se o ID do game estiver no formato incorreto, exibe o retorno:</strong>
 
 ```json
 {
-  "message": "Invalid game ID"
+  "message": "Invalid task ID"
 }
 ```
 
@@ -330,7 +277,7 @@ Em casos de erros, podem sugir as seguintes retornos:
 
 ```json
 {
-  "message": "Game not exist"
+  "message": "Task not exist"
 }
 ```
 
@@ -356,4 +303,3 @@ Em casos de erros, podem sugir as seguintes retornos:
 
 Caso você queria fazer alguma contribuição, fique a vontade para comentar, fazer pull resquests. Toda ajuda a melhorar o código é bem vinda :D!
 
-##
