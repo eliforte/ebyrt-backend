@@ -1,4 +1,5 @@
 const { client } = require('../connection');
+const {ObjectId} = require("mongodb");
 const DB_NAME = 'To-do';
 const DB_COLLECTION = 'users';
 
@@ -6,3 +7,4 @@ const userCollection = client.db(DB_NAME).collection(DB_COLLECTION);
 
 module.exports.Create = async ({ email, password, name }) => await userCollection.insertOne({ email, password, name });
 module.exports.FindByEmail = async (email) => await userCollection.findOne({ email });
+module.exports.FindById = async (id) => userCollection.findOne(ObjectId(id));

@@ -5,7 +5,7 @@ module.exports.Login = async (req, res, next) => {
   try {
     const { email, password } = req.body;
     const loginAccepted = await LoginUser({ email, password });
-    return res.status(ACCEPTED).json({ token: loginAccepted });
+    return res.status(ACCEPTED).json(loginAccepted);
   } catch (err) {
     next(err)
   }
