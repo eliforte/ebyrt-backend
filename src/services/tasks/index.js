@@ -1,4 +1,4 @@
-const { Create, ListTask, RemoveTask, FindByName, UpdateTask } = require('../../database/tasks');
+const { Create, ListTask, RemoveTask, UpdateTask, FindById } = require('../../database/tasks');
 const { ApiError: { NewError } } = require('../../global/error/apiError');
 const { INVALID_ID_400, TASK_NOT_EXIST_404 } = require('../../global/helpers/messages');
 const { ObjectId } = require('mongodb');
@@ -18,4 +18,11 @@ module.exports.UpdateTask = async (id, infoTasks) => {
   const task = await UpdateTask(id, infoTasks);
   if (!task) return NewError(TASK_NOT_EXIST_404);
   return task;
+};
+
+module.exports.RemoveTask = async (id) => {
+  validatedId(id);
+  const findTask = await FindById(id);
+  if (!findTask) return NewError(TASK_NOT_EXIST_404)
+  await RemoveTask(id);
 };
