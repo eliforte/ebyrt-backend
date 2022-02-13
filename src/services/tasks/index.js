@@ -1,5 +1,5 @@
 const { Create, ListTask, RemoveTask, UpdateTask, FindById } = require('../../database/tasks');
-const { ApiError: { NewError } } = require('../../global/error/apiError');
+const { ApiError: { NewError } } = require('../../global/error/ApiError');
 const { INVALID_ID_400, TASK_NOT_EXIST_404 } = require('../../global/helpers/messages');
 const { ObjectId } = require('mongodb');
 
