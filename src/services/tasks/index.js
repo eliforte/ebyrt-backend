@@ -14,8 +14,8 @@ module.exports.ListTask = async () => await ListTask();
 
 module.exports.UpdateTask = async (id, infoTasks) => {
   validatedId(id);
-  const { _id: removeId, ...restInfoTasks } = infoTasks;
-  const task = await UpdateGame(id, restInfoTasks);
+  delete infoTasks._id;
+  const task = await UpdateGame(id, infoTasks);
   if (!task) return NewError(TASK_NOT_EXIST_404);
   return task;
 };
