@@ -1,4 +1,4 @@
-# GameStore API
+# To-do Api
 
 API desenvolvida para fazer o controle de um To-Do List.
 
@@ -31,13 +31,20 @@ mocks necessários.
 
 ## Requisições e End-Points
 
-Todas as requisições devem ser feitas para a URL [https://game-store-14.herokuapp.com/](https://game-store-14.herokuapp.com/).
+Todas as requisições devem ser feitas para a URL.
+
+## Scripts
+
+- <code>npm install</code> => instalará todas a dependências do projeto use o comando.
+- <code>npm start</code> => inicializará a aplicação para ambiente de produção.
+- <code>npm run dev</code> => inicializará a aplicação para ambiente de desenvolvimento.
+- <code>npm run test</code> => incializará os testes unitários da aplicação.
 
 ### Autenticação de usuário
 
 #### REGISTRO
 
-Para poder adicionar, editar, remover ou realizar comprar de jogos, o usuário tera que ser cadastrado no site, caso contrário, não conseguirá
+Para poder adicionar, editar ou remover, o usuário tera que ser cadastrado no site, caso contrário, não conseguirá
 realizar essas ações.
 
 O cadrastro deve ser feito por um requisição do tipo <strong>POST</strong> para o endpoint <code>/register</code>, contendo as seguites informações:
@@ -46,7 +53,7 @@ O cadrastro deve ser feito por um requisição do tipo <strong>POST</strong> par
 {
   "email": "email@exemplo.com",
   "password": "senhasenha",
-  "repeatPassword": "senhasenha"
+  "name": "Nome do Usuário"
 }
 ```
 
@@ -81,14 +88,19 @@ Exemplos de erros que podem retornar:
 
 ```json
 {
-  "massage": "User created successfully!"
+  "user": {
+		"_id": "6208c2d683d9b0e29874c7cb",
+		"email": "email@exemplo.com",
+		"name": "Nome do Usuário"
+	},
+	"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImFja25vd2xlZGdlZCI6dHJ1ZSwiaW5zZXJ0ZWRJZCI6IjYyMDhjMmQ2ODNkOWIwZTI5ODc0YzdjYiJ9LCJpYXQiOjE2NDQ3NDEzMzQsImV4cCI6MTY0NTM0NjEzNH0.ouKmFlNq82-2sa506cbXrfLr3koTvtd5RJRQE6fz1XY"
 }
 ```
 
 #### LOGIN
 
 O login do usuário deve ser feito em uma requisição do tipo <strong>POST</strong> para o endpoint <code>/login</code>. Email e senha deve ser os mesmos utilizados
-no registro e ambos os campos são obrigatórios. Após feito o login, o usuário tem acesso ao token de autenticação para poder criar, editar, remover ou comprar games.
+no registro e ambos os campos são obrigatórios. Após feito o login, o usuário tem acesso ao token de autenticação poderá criar, editar, remover ou visualizar suas atividade salvas.
 
 <strong>Campo não preenchido:</strong>
 
@@ -109,15 +121,20 @@ no registro e ambos os campos são obrigatórios. Após feito o login, o usuári
 
 ```json
 {
-  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjYxYjgyNWJkNWVkYjU0ZGYwN2QyMDcwMSIsImVtYWlsIjoiZW1haWxAZW1haWwuY29tIn0sImlhdCI6MTYzOTQ1ODgwMCwiZXhwIjoxNjQwMDYzNjAwfQ.WYIeVRXq_AtG3QdZhVjregogHs2cXlBBLQ9P3hGu4Mk"
+  "user": {
+		"_id": "6208c2d683d9b0e29874c7cb",
+		"email": "email@exemplo.com",
+		"name": "Nome do Usuário"
+	},
+	"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjYyMDhjMmQ2ODNkOWIwZTI5ODc0YzdjYiIsImVtYWlsIjoiZW1haWxAZXhlbXBsby5jb20iLCJuYW1lIjoiTm9tZSBkbyBVc3XDoXJpbyJ9LCJpYXQiOjE2NDQ3NDE2MDQsImV4cCI6MTY0NTM0NjQwNH0.NsnrEGQ5DF9KOjqZIgWXdzrc9DYQ0XZRUbmrRTgoTMc"
 }
 ```
 
 ### Games
 
-#### LISTAGEM DE GAMES
+#### LISTAGEM DE TAREFAS
 
-Para fazer a listagem de todos os jogos faça uma requisição do tipo <strong>GET</strong> para o endpoint <code>/games</code> e o retorno dever ser um array
+Para fazer a listagem de todas as tarefas faça uma requisição do tipo <strong>GET</strong> para o endpoint <code>/games</code> e o retorno dever ser um array
 com todos os jogos disponíveis do banco, como por exemplo:
 
 ```json
