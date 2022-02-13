@@ -3,6 +3,7 @@ const {
   SCHEMALogin,
   SCHEMARegister,
   SCHEMATask,
+  SCHEMAUpdateTask,
 } = require('../../helpers/schemas');
 
 module.exports.Login = async (req, _res, next) => {
@@ -29,6 +30,17 @@ module.exports.Tasks = async (req, _res, next) => {
   try {
     const { text, userId, status } = req.body;
     const { error } = SCHEMATask.validate({ text, userId, status });
+    if (error) return next({ message: error.message, status: BAD_REQUEST });
+    next();
+  } catch (err) {
+    next(err)
+  }
+};
+
+module.exports.UpdateTask = async (req, _res, next) => {
+  try {
+    const { text, status } = req.body;
+    const { error } = SCHEMAUpdateTask.validate({ text, status });
     if (error) return next({ message: error.message, status: BAD_REQUEST });
     next();
   } catch (err) {

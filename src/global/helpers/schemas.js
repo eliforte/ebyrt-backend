@@ -16,3 +16,8 @@ module.exports.SCHEMATask = Joi.object({
   userId: Joi.string().required(),
   status: Joi.string().required(),
 });
+
+module.exports.SCHEMAUpdateTask = Joi.object({
+  text: Joi.string(),
+  status: Joi.string(),
+});
