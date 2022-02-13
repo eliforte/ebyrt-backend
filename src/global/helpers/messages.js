@@ -7,7 +7,7 @@ const INCORRECT_401 = { message: 'Incorrect username or password', status: UNAUT
 const USER_NOT_EXIST_404 = { message: 'User not exist', status: NOT_FOUND };
 const INVALID_ENTRIES_400 = { message: 'Invalid entries', status: BAD_REQUEST };
 const INVALID_ID_400 = { message: 'Invalid task ID', status: BAD_REQUEST };
-const INCORRECT_PASSWORD_409 = { message: 'Passwor and repeatPassword must be equal', staus: CONFLICT }
+const INCORRECT_PASSWORD_409 = { message: 'Password and repeatPassword must be equal', status: CONFLICT }
 
 module.exports = {
   JWT_MALFORMED_401,
