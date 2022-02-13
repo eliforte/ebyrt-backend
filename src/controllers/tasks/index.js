@@ -14,7 +14,8 @@ module.exports.Create = async (req, res, next) => {
 
 module.exports.List = async (req, res, next) => {
   try {
-    const list = await ListTasks();
+    const { _id } = req.user;
+    const list = await ListTasks(_id);
     return res.status(OK).json({ data: list });
   } catch (err) {
     next(err)
