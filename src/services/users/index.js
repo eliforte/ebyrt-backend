@@ -21,7 +21,8 @@ module.exports.CreateUser = async ({ email, password, name }) => {
 module.exports.LoginUser = async ({ email, password }) => {
   const userExist = await FindByEmail(email);
   if (!userExist) return NewError(USER_NOT_EXIST_404);
-  if (userExist.email !== email || userExist.password !== password) {
+  const cryptoPassword = md5(password);
+  if (userExist.email !== email || userExist.password !== cryptoPassword) {
     return NewError(INCORRECT_401);
   }
   delete userExist.password;
