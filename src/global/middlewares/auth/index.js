@@ -10,9 +10,9 @@ const jwtConfig = {
   algorithm: 'HS256',
 };
 
-const createToken = (body) => jwt.sign({ data: body },SECRET, jwtConfig);
+module.exports.CreateToken = (body) => jwt.sign({ data: body },SECRET, jwtConfig);
 
-const verifyToken = async (req, res, next) => {
+module.exports.VerifyToken = async (req, res, next) => {
   try {
     const { authorization } = req.headers;
     if (!authorization) {
@@ -28,8 +28,3 @@ const verifyToken = async (req, res, next) => {
     next(messages.JWT_MALFORMED_401);
   }
 }
-
-module.exports = {
-  createToken,
-  verifyToken,
-};
