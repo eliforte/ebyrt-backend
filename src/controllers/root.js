@@ -6,6 +6,6 @@ const validation = require('../global/middlewares/validation');
 const root = express.Router({ mergeParams: true });
 
 root.use('/login', validation.Login, routerLogin);
-root.use('/task', routerTask)
+root.use('/task', routerTask);
 
 module.exports = root;
