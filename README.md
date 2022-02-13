@@ -35,10 +35,12 @@ API desenvolvida para fazer o controle de um To-Do List.
 
 ## Ferramentas utilizadas
 
-A aplicação foi toda desenvolvida usando linguagem [Javascript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript) em [Node.js](https://nodejs.org/en/docs/)
-utilizando o [Express](https://expressjs.com/pt-br/). Para validações do corpo das requisições foi usado o [Joi](https://www.npmjs.com/package/joi). Validações de 
-login dos usuários feita com o [JsonWebToken](https://www.npmjs.com/package/jsonwebtoken). Foi utilizado [MongoDB](https://www.mongodb.com/) como database e 
-[MongoDB Atlas](https://www.mongodb.com/atlas/database) para o armazenamento em nuvem do database.
+- [Javascript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
+- [Node.js](https://nodejs.org/en/docs/)
+- [Express](https://expressjs.com/pt-br/)
+- [JsonWebToken](https://www.npmjs.com/package/jsonwebtoken)
+- [MongoDB](https://www.mongodb.com/)
+- [MongoDB Atlas](https://www.mongodb.com/atlas/database)
 
 Deploy da aplicação feita na plataforma gratuita de hospedagem [Heroku](https://id.heroku.com/).
 
