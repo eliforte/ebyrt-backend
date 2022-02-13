@@ -7,3 +7,4 @@ module.exports.INCORRECT_401 = { message: 'Incorrect username or password', stat
 module.exports.USER_NOT_EXIST_404 = { message: 'User not exist', status: NOT_FOUND };
 module.exports.INVALID_ENTRIES_400 = { message: 'Invalid entries', status: BAD_REQUEST };
 module.exports.INVALID_ID_400 = { message: 'Invalid task ID', status: BAD_REQUEST };
+module.exports.TASK_NOT_EXIST_404 = { message: 'Task not exist', status: NOT_FOUND };
