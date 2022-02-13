@@ -1,5 +1,5 @@
 const { ACCEPTED } = require('http-status-codes').StatusCodes;
-const service = require('../../services/users');
+const service = require('../../../services/users');
 
 module.exports.Login = async (req, res, next) => {
   try {
