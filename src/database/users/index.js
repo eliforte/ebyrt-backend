@@ -1,5 +1,6 @@
+const { ObjectId } = require('mongodb');
 const { client } = require('../connection');
-const {ObjectId} = require("mongodb");
+
 const DB_NAME = 'To-do';
 const DB_COLLECTION = 'users';
 

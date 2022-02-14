@@ -1,5 +1,7 @@
 const express = require('express');
-const { Create, List, Delete, Update } = require('../tasks');
+const {
+  Create, List, Delete, Update,
+} = require('.');
 const { Tasks, UpdateTask } = require('../../global/middlewares/validation');
 const { VerifyToken } = require('../../global/middlewares/auth');
 
